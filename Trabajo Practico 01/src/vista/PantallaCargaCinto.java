@@ -12,9 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import modelo.Cinto;
-import modelo.Negocio;
-import modelo.Producto;
+import modelo.*;
 
 @SuppressWarnings("serial")
 public class PantallaCargaCinto extends JFrame {
