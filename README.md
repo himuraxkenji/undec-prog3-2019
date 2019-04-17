@@ -1,2 +1,3 @@
-# undec-prog3-2019
-Trabajo Practico Programacion III 
+# Trabajo Practicos Programacion III
+Este repositorio contiene los trabajos de la catedra de programacion III 
+
