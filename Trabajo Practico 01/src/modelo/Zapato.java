@@ -16,7 +16,7 @@ public class Zapato extends Producto{
 	}
 
 	public Zapato(String codigo, Modelo m, double precioInicial) {
-		super (codigo);
+		super (codigo); 
 		this.miModelo=m;
 		this.cambiarPrecio(precioInicial);
 		this.miTalle=-1;

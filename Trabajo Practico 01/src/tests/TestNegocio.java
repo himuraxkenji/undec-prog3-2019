@@ -1,6 +1,6 @@
 package tests;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
@@ -8,77 +8,17 @@ import org.junit.jupiter.api.Test;
 
 import modelo.*;
 
-class testA {
+class TestNegocio {
 
 	@Test
-	void test01Producto() {
-
-
-		Producto p = new Producto("2345");
-
-		assertEquals("002345", p.getCodigo());
-		assertEquals("$0", p.getLastPrecio());
-
-
-		assertEquals(true,p.cambiarPrecio(12));
-		assertEquals("$  12.0", p.getLastPrecio());
-
-		assertEquals(false,p.cambiarPrecio(12));
-		assertEquals("$  12.0", p.getLastPrecio());
-
-		assertEquals(true,p.cambiarPrecio(340));
-		assertEquals("$ 340.0", p.getLastPrecio());
-
-		Producto p2 = new Producto("345");
-
-		assertEquals("000345", p2.getCodigo());
-		assertEquals("$0", p2.getLastPrecio());
-	}
-
-	@Test
-	void test02Zapato() {
-
-
-		Producto p = new Zapato("12345",Modelo.Nautico,28,12.30);
-		assertEquals("ZN012345t28 $  12.3", p.toString());
-
-		Producto p1 = new Zapato("892",Modelo.Bota,8, 13.45);
-		assertEquals("ZB000892t08 $ 13.45", p1.toString());
-
-		Producto p2 = new Zapato("5",Modelo.Nautico,0,0);
-		assertEquals("ZN000005t00 $   0.0", p2.toString());
-
-		Producto p3 = new Zapato("12345",Modelo.Sandalia,12);
-		assertEquals("ZZ012345tST $  12.0", p3.toString());
-	}
-
-	@Test
-	void test03Cinto() {
-
-
-		Producto c = new Cinto("654",100,"rojo",9);
-		assertEquals("C000654l100cRojo $   9.0", c.toString());
-
-		Producto c1 = new Cinto("10",80,"VERDE",10);
-		assertEquals("C000010l080cVerde $  10.0", c1.toString());
-
-		Producto c2 = new Cinto("1",45,"rosita feo",90);
-		assertEquals("C000001l045cRositaFeo $  90.0", c2.toString());
-
-		Producto c3 = new Cinto("1001",83,"Amarillo PATITO",8);
-		assertEquals("C001001l083cAmarilloPatito $   8.0", c3.toString());
-
-	}
-
-	@Test
-	void test04NegocioOrdenCodigo() {
+	void test04NegocioOrdenCodigo() { 
 		Negocio.getInstancia().delAllProductos();
 		assertEquals(true,Negocio.getInstancia().addProducto("12379",Modelo.Nautico,28,12.30));
 		assertEquals(true,Negocio.getInstancia().addProducto("12376",Modelo.Bota,28,12.20));
 		assertEquals(true,Negocio.getInstancia().addProducto("12008",Modelo.Sandalia,28,12.10));
 		List<Producto> aux;
 		aux = Negocio.getInstancia().getProducto("37");
-		assertEquals(2,aux.size());
+		assertEquals(2,aux.size()); 
 		assertEquals("012376",aux.get(0).getCodigo());
 		assertEquals("012379",aux.get(1).getCodigo());
 		aux = Negocio.getInstancia().getProducto("5");
@@ -210,4 +150,5 @@ class testA {
 		assertEquals(125.75, Negocio.getInstancia().getTotal(p,p1,p2,p3));
 
 	}
+
 }

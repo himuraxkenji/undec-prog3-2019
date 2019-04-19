@@ -19,7 +19,7 @@ public class Producto implements Comparable<Producto>{
 		for (int i=0;i<misPrecios.size();i++) {
 			if (misPrecios.get(i).equals(valor)) {
 				return false;
-			}
+			} 
 		}
 		misPrecios.add(valor);
 		return true;
