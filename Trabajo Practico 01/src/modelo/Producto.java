@@ -5,97 +5,63 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Producto implements Comparable<Producto>{
+	
 	private String codigo;
-	private List<Double> misPrecios=new ArrayList<Double>();
+	private List<Double> historialPrecios=new ArrayList<Double>();
 
-	public Producto(String codigo) {
+	public Producto(String codigo, double precio) {
+		
 		this.codigo=codigo;
+		
+		this.historialPrecios.add(precio);
 
 	}
+	
+
 
 	public boolean cambiarPrecio(double valor) {
 
-
-		for (int i=0;i<misPrecios.size();i++) {
-			if (misPrecios.get(i).equals(valor)) {
+		for (int i=0;i<historialPrecios.size();i++) {
+			if (historialPrecios.get(i).equals(valor)) {
 				return false;
 			} 
 		}
-		misPrecios.add(valor);
-		return true;
-
-
+		
+		return historialPrecios.add(valor);
 	}
-
-
 
 	public String getCodigo() {
+		
+		String aux = this.codigo;
+		
+		for(int i = this.codigo.length(); i < 6; i++) 
 
-		if (this.codigo.length()==4) {
-			return "00"+this.codigo;
-		}else {
-			if (this.codigo.length()==3) {
-				return "000"+this.codigo;
-			}else {
-				if (this.codigo.length()==5) {
-					return "0"+this.codigo;
-				}else {
-					if(this.codigo.length()==1){
-						return "00000"+this.codigo;
-					}else {
-						if (this.codigo.length()==2) {
-							return "0000"+this.codigo;
-						}
-					}
-				}
-			}
-		}
-		return this.codigo;
+			aux= "0" + aux;
+		
+		return aux;
 	}
-
-
 
 	public String getLastPrecio() {
 
-		String miPrecio;
-		if (misPrecios.size() == 0  || misPrecios == null)
+		String miPrecio = "";
+		String retorna = "$ ";
+		
+		if (historialPrecios.size() == 0  || historialPrecios == null)
 			return "$0";
-		if ((misPrecios.get(misPrecios.size()-1))==0)
+		if ((historialPrecios.get(historialPrecios.size()-1))==0)
 			return "$   "+"0.0";
+		
+		miPrecio=Double.toString(historialPrecios.get(historialPrecios.size()-1));
+		
+		for (int i = miPrecio.length(); i < 5; i++) 
+			retorna+=" ";
 
-		if (misPrecios.get(misPrecios.size()-1)>0) {
-			miPrecio=Double.toString(misPrecios.get(misPrecios.size()-1));
-			if (miPrecio.length()==5) {
-				return "$ "+miPrecio;
-			}else {
-				if (miPrecio.length()==4) {
-					return "$  "+miPrecio;
-				}else {
-					if (miPrecio.length()==3) {
-						return "$   "+miPrecio;
-					}else {
-						if (miPrecio.length()==2) {
-							return "$   "+miPrecio+".0";
-						}
-					}
-				}
-
-			}
-
-		}
-
-		return "";
-
-
-
-
+		return retorna+miPrecio;
 	}
 
 	public double getLastPrecioNumero() {
-		double miPrecio;
 
-		miPrecio=(misPrecios.get(misPrecios.size()-1));
-		return miPrecio;
+		return (historialPrecios.get(historialPrecios.size()-1));
 
 	}
 
@@ -113,7 +79,6 @@ class OrdenProducto implements Comparator<Producto>{
 	public int compare(Producto o1, Producto o2) {
 		return o1.toString().compareTo(o2.toString());
 	}
-
 
 }
 

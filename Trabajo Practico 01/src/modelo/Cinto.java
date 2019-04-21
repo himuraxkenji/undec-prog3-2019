@@ -4,19 +4,13 @@ public class Cinto extends Producto{
 	private int largo;
 	private String color;
 
-	public Cinto(String codigo, int largo, String color, double precioInicial) {
-		super (codigo);
-		this.largo=largo;
-		this.color=color;
+	public Cinto(String codigo, double precio, int largo, String color, double precioInicial) {
+		
+		super (codigo, precio);
 		super.cambiarPrecio(precioInicial);
-
-	}
-
-
-	@Override
-	public boolean cambiarPrecio(double valor) {
-		return super.cambiarPrecio(valor);
-
+		this.largo=largo;
+		this.color=color; 
+		
 	}
 
 	@Override
@@ -50,7 +44,7 @@ public class Cinto extends Producto{
 
 		return this.largo;
 	}
-	//
+	
 	public String getColor() {
 
 		return this.color;

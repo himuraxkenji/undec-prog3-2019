@@ -12,7 +12,7 @@ class TestNegocio {
 
 	@Test
 	void test04NegocioOrdenCodigo() { 
-		Negocio.getInstancia().delAllProductos();
+		Negocio.getInstancia().delAllProductos(); 
 		assertEquals(true,Negocio.getInstancia().addProducto("12379",Modelo.Nautico,28,12.30));
 		assertEquals(true,Negocio.getInstancia().addProducto("12376",Modelo.Bota,28,12.20));
 		assertEquals(true,Negocio.getInstancia().addProducto("12008",Modelo.Sandalia,28,12.10));
@@ -139,8 +139,8 @@ class TestNegocio {
 
 		Negocio.getInstancia().delAllProductos();
 
-		Producto p = new Zapato("12345",Modelo.Nautico,28,12.30);
-		Producto p1 = new Zapato("892",Modelo.Bota,8, 13.45);
+		Producto p = new Calzado("12345",Modelo.Nautico,28,12.30);
+		Producto p1 = new Calzado("892",Modelo.Bota,8, 13.45);
 		Producto p2 = new Cinto("10",80,"VERDE",10);
 		Producto p3 = new Cinto("1",45,"rosita feo",90);
 
