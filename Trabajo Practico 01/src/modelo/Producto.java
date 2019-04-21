@@ -23,7 +23,7 @@ public class Producto implements Comparable<Producto>{
 
 		for (int i=0;i<historialPrecios.size();i++) {
 			if (historialPrecios.get(i).equals(valor)) {
-				return false;
+				return false; 
 			} 
 		}
 		
@@ -59,9 +59,9 @@ public class Producto implements Comparable<Producto>{
 		return retorna+miPrecio;
 	}
 
-	public double getLastPrecioNumero() {
+	public double getLastPrecioNumero() { 
 
-		return (historialPrecios.get(historialPrecios.size()-1));
+		return (historialPrecios.get(historialPrecios.size() -1 ));
 
 	}
 
@@ -77,7 +77,7 @@ class OrdenProducto implements Comparator<Producto>{
 
 	@Override
 	public int compare(Producto o1, Producto o2) {
-		return o1.toString().compareTo(o2.toString());
+		return o1.toString().compareTo(o2.toString()); 
 	}
 
 }

@@ -13,7 +13,7 @@ public class Sandalias extends Producto implements Calzado{
 
 	@Override
 	public String getMiModelo() {
-		return this.getClass().getName();
+		return this.getClass().getSimpleName();
 	}
 
 	@Override

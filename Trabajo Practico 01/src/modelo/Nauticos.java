@@ -7,8 +7,9 @@ public class Nauticos extends Producto implements Calzado{
 	private String materialSuela;
 	
 	
-	public Nauticos(String codigo, double precio, String materialSuela, String materialSup) {
+	public Nauticos(String codigo, double precio, int talle, String materialSuela, String materialSup) {
 		super(codigo, precio);
+		this.talle = talle;
 		this.materialSuela = materialSuela;
 		this.materialSuperior = materialSup;
 		
