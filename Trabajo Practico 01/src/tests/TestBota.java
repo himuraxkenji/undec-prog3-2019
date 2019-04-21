@@ -23,7 +23,7 @@ class TestBota {
 		
 		Bota b = new Bota("1234", 12.4, 42, Cania.Baja);
 		
-		assertEquals("Bota", b.getMiModelo());
+		assertEquals("Bota", ((Bota)b).getMiModelo());
 	
 	}
 	
@@ -42,7 +42,8 @@ class TestBota {
 		
 		Bota b = new Bota("1234", 12.4, 42, Cania.Baja);
 		
-		assertEquals("Baja", b.getCania());
+		assertEquals("Baja", ((Bota)b).getCania());
 	
 	}
+	
 }

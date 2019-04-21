@@ -12,17 +12,27 @@ class TestCinto {
 	void crearCinto_cintoNoExiste_cintoCreado() {
 
 
-		Producto c = new Cinto("654",100,"rojo",9);
+		Cinto c = new Cinto("654",12.3,100,"rojo",9);
 		
 		assertFalse(c.equals(null));
 	
 	}	
-	@Test
-	void toString_cintoCreado_obtuvoCodigo() {
 	
-		Producto c = new Cinto("654",100,"rojo",9);
+	@Test
+	void getLargo_cintoCreado_obtuvoLargoCinto() {
+	
+		Cinto c = new Cinto("654",12.4 , 100,"rojo",9);
 		
-		assertEquals("C000654l100cRojo $   9.0", c.toString());
+		assertEquals("9", c.getLargo());
+
+	}
+	
+	@Test
+	void getColor_cintoCreado_obtuvoColor() {
+	
+		Cinto c = new Cinto("654",12.4 , 100,"rojo",9);
+		
+		assertEquals("rojo", c.getColor());
 
 	}
 

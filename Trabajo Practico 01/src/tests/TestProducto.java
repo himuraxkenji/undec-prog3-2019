@@ -14,7 +14,7 @@ class TestProducto {
 	void nuevoProducto_ProductoNoExiste_ProductoCreado() {
 
 
-		Producto p = new Producto("2345"); 
+		Producto p = new Producto("2345", 12.4); 
 		
 		assertEquals("002345", p.getCodigo());
 		
@@ -23,25 +23,16 @@ class TestProducto {
 	@Test
 	void getLastPrecio_ProductoSinPrecio_PrecioCero() {
 		
-		Producto p = new Producto("2345");
+		Producto p = new Producto("2345", 10.2);
 		
-		assertEquals("$0", p.getLastPrecio());
+		assertEquals("$  10.2", p.getLastPrecio());
 	
 	}
-	
-	@Test
-	void cambiarPrecio_ProductoSinPrecio_PrecioCero() {
-		Producto p = new Producto("2345");
-		
-		assertEquals(true,p.cambiarPrecio(12));
-		
-		assertEquals("$  12.0", p.getLastPrecio());
-
-	}
+	 
 	
 	@Test
 	void cambiarPrecio_ProductoConPrecioIgual_NoCambioPrecio() {
-		Producto p = new Producto("2345");
+		Producto p = new Producto("2345", 12);
 		p.cambiarPrecio(12);
 		assertEquals(false,p.cambiarPrecio(12));
 		assertEquals("$  12.0", p.getLastPrecio());
@@ -49,7 +40,7 @@ class TestProducto {
 	
 	@Test
 	void getLastPrecio_ProductoConPrecioIgual_NoCambioPrecio() {
-		Producto p = new Producto("2345");
+		Producto p = new Producto("2345", 12);
 		p.cambiarPrecio(12);
 		p.cambiarPrecio(340);
 		assertEquals("$ 340.0", p.getLastPrecio());
