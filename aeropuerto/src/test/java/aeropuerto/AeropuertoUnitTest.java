@@ -55,14 +55,5 @@ class AeropuertoUnitTest {
 		
 	}
 	
-	@Test
-	public void instanciarAeropuerto_FaltaCiudadAeropuerto_CiudadIncompletaException() {
-		//arrange y act
-		Ciudad  unaCiudad = new Ciudad(1, "Buenos Aires");
-		//assert
-		Assertions.assertThrows(CiudadAeropuertoIncompletaException.class, ()->{
-			Aeropuerto unAeropuerto = new Aeropuerto(1, "", null, "eze1234");
-		});
-		
-	}
+	
 }
