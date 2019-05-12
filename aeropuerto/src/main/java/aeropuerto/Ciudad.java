@@ -35,11 +35,4 @@ public class Ciudad {
 	public void setCiudad(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	
-	
-	
-	
-	
-
 }
