@@ -5,7 +5,7 @@ import excepciones.AerolineaNombreIncompletoException;
 
 public class Aerolinea {
 
-	private Integer idAerolinea;
+	private Integer idAerolinea; 
 	private String nombre;
 
 	public Aerolinea(Integer idAerolinea, String nombre) throws AerolineaMalFormadaException{

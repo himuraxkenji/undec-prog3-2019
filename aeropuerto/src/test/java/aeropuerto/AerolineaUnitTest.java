@@ -36,7 +36,7 @@ class AerolineaUnitTest {
 	@Test
 	public void ModificarAerolineaNombre_TodosLosAtributos_InstanciaCorrecta() {
 		Aerolinea unaAerolinea = null;
-		try {
+		try { 
 			unaAerolinea = new Aerolinea(1, "Flybondy");
 		} catch (AerolineaMalFormadaException e) {
 			e.printStackTrace();
