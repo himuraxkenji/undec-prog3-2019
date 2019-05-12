@@ -11,7 +11,7 @@ class CiudadUnitTest {
 	public void instanciarCiudad_TodosLosAtributos_InstanciaCorrecta() {
 		Ciudad unaCiudad = new Ciudad(1, "Chilecito", "5360" );
 		
-		assertEquals(1, unaCiudad.getId());
+		assertEquals(1, unaCiudad.getIdCiudad());
 		assertEquals("Chilecito", unaCiudad.getNombre());
 		assertEquals("5360", unaCiudad.getCodigoPostal());
 	}
