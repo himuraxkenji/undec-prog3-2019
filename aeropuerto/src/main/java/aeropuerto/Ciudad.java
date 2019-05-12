@@ -20,6 +20,15 @@ public class Ciudad {
 		this.codigoPostal = codigoPostal;
 	}
 
+	public Ciudad(Integer idCiudad, String nombre) throws CiudadMalFormadaException{
+		if(nombre.length() == 0)
+			throw new NombreCiudadIncompletaException();
+		if(idCiudad == 0)
+			throw new IdCiudadIncompletaException();
+		this.idCiudad = idCiudad;
+		this.nombre = nombre;
+	}
+
 	public Integer getIdCiudad() {
 		return this.idCiudad;
 	}

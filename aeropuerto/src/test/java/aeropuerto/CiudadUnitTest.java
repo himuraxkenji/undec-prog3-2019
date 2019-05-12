@@ -32,7 +32,7 @@ class CiudadUnitTest {
 		Ciudad unaCiudad = null;
 		
 		try {
-			unaCiudad = new Ciudad(1, "Chilecito", "");
+			unaCiudad = new Ciudad(1, "Chilecito");
 		}catch (CiudadMalFormadaException e) {
 			e.printStackTrace();
 		}catch (Exception e) {
