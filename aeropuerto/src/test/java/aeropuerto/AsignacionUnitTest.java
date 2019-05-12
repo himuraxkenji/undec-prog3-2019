@@ -2,16 +2,58 @@ package aeropuerto;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import excepciones.*;
 
 class AsignacionUnitTest {
 
 	@Test
 	public void instanciarAsignación_TodosLosAtributos_InstanciaCorrecta() {
-		Pasajero unPasajero = new Pasajero(1, "20384407618", "Riperto", "Adriel", "3825574945" ); 
-		Asiento unAsiento = new Asiento(1, "001"); 		
-		Asignacion unaAsignacion = new Asignacion(unPasajero, unAsiento);
+		Pasajero unPasajero = null;
+		try {
+			unPasajero = new Pasajero(1, "20384407618", "Riperto", "Adriel", "3825574945" );
+		} catch (PasajeroMalFormadoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		Asiento unAsiento= null;
+		try { 
+			unAsiento = new Asiento(1, "001");
+		} catch (AsientoMalFormadoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 		
+		Asignacion unaAsignacion = null;
+		try {
+			unaAsignacion = new Asignacion(unPasajero, unAsiento,"001-RA");
+		} catch (AsientoMalFormadoException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals("001-RA", unaAsignacion.getCodigoAsignacion());
+	}
+	
+	@Test
+	public void instanciarAsiento_FaltaCodigoAsiento_AsignacionCodigoIncompletoException() {
+		
+		Assertions.assertThrows(AsignacionCodigoIncompletoException.class, ()->{
+			Pasajero unPasajero = null;
+			try {
+				unPasajero = new Pasajero(1, "20384407618", "Riperto", "Adriel", "3825574945" );
+			} catch (PasajeroMalFormadoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			Asiento unAsiento= null;
+			try { 
+				unAsiento = new Asiento(1, "001");
+			} catch (AsientoMalFormadoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 		
+			Asignacion unaAsignacion = new Asignacion(unPasajero, unAsiento,"");
+		});
 	}
 }
