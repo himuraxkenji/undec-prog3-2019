@@ -8,7 +8,7 @@ public class Ciudad {
 	
 	private Integer idCiudad;
 	private String nombre;
-	private String codigoPostal;
+	private String codigoPostal = "No cargado";
 
 	public Ciudad(Integer idCiudad, String nombre, String codigoPostal) throws CiudadMalFormadaException {
 		if(nombre.length() == 0)

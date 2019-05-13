@@ -23,4 +23,16 @@ public class Asignacion {
 		return this.codigoAsignacion;
 	}
 
+	public Pasajero getPasajero() {
+		return this.unPasajero;
+	}
+
+	public Asiento getAsiento() {
+		return this.unAsiento;
+	}
+
+	public void setPasajero(Pasajero unPasajero) {
+		this.unPasajero = unPasajero;
+	}
+
 }

@@ -40,7 +40,7 @@ class CiudadUnitTest {
 		}
 		
 		assertEquals("Chilecito", unaCiudad.getNombre());
-		assertEquals("", unaCiudad.getCodigoPostal());
+		assertEquals("No cargado", unaCiudad.getCodigoPostal());
 	}
 	
 	@Test

@@ -17,7 +17,7 @@ class PasajeroUnitTest {
 			unPasajero = new Pasajero(1, "20384407618", "Riperto", "Adriel", "3825574945" ); 
 		}catch(PasajeroMalFormadoException e) {
 			e.printStackTrace();
-		}catch (Exception e) {
+		}catch (Exception e) { 
 			e.printStackTrace();
 		}
 		

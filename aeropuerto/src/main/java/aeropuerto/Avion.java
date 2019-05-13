@@ -17,7 +17,7 @@ public class Avion {
 	private List<Asiento> listaAsientos;
 
 	public Avion(Integer idAvion, String modelo, String matricula, int cantidadAsientos) throws AvionMalFormadoException{
-		if(modelo.length() == 0)
+		if(modelo.length() == 0) 
 			throw new AvionModeloIncompletoException();
 		if(matricula.length() == 0)
 			throw new AvionMatriculaIncompletaException();
