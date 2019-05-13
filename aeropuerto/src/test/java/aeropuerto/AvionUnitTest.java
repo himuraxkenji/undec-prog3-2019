@@ -33,6 +33,7 @@ class AvionUnitTest {
 		assertEquals("Boeing", unAvion.getModelo());
 		assertEquals("A81SA", unAvion.getMatricula());
 		assertEquals(12, unAvion.getAsientos().size());
+	
 	}
 	
 	
@@ -108,6 +109,7 @@ class AvionUnitTest {
 		
 		unAvion.setCantidadAsientos(50);
 		assertEquals(50, unAvion.getAsientos().size());
+		
 	}
 	
 }

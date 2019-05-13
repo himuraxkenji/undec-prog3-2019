@@ -15,7 +15,7 @@ public class Aerolinea {
 		this.nombre = nombre;
 	}
 
-	public Integer getId() {
+	public Integer getId() { 
 		return this.idAerolinea;
 	}
 
