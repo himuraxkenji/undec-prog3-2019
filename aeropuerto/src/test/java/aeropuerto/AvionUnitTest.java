@@ -2,75 +2,112 @@ package aeropuerto;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.List;
+import java.util.*;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class AvionUnitTest {
+import excepciones.AsientoMalFormadoException;
+import excepciones.AvionCantidadAsientoCeroIncompletoException;
+import excepciones.AvionMalFormadoException;
+import excepciones.AvionMatriculaIncompletaException;
+import excepciones.AvionModeloIncompletoException;
 
+class AvionUnitTest {
+	
+	
+	
 	@Test
 	public void instanciarAvion_TodosLosAtributos_InstanciaCorrecta() {
 		
-		List<Asiento> asientosAvion = new ArrayList<Asiento>();
-		asientosAvion.add(new Asiento(1, "001"));
-		asientosAvion.add(new Asiento(2, "002"));
-		asientosAvion.add(new Asiento(3, "003"));
-		
-		Avion unAvion = new Avion(1, "Boeing", "A81SA", asientosAvion);
-			
+		Avion unAvion = null;
+		try {
+			unAvion = new Avion(1, "Boeing", "A81SA", 12);
+		} catch (AvionMalFormadoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		assertEquals(1, unAvion.getId());
 		assertEquals("Boeing", unAvion.getModelo());
 		assertEquals("A81SA", unAvion.getMatricula());
-		assertEquals("eze1234", unAeropuerto.getCodigo());	
+		assertEquals(12, unAvion.getAsientos().size());
 	}
 	
 	
 	@Test
 	public void instanciarAvion_FaltaModelo_ModeloAvionIncompletoException() {
 		
-		List<Asiento> asientosAvion = new ArrayList<Asiento>();
-		asientosAvion.add(new Asiento(1, "001"));
-		asientosAvion.add(new Asiento(2, "002"));
-		asientosAvion.add(new Asiento(3, "003"));
-		
-		Assertions.assertThrows(ModeloAvionIncompletoException.class, ()->{
-			Avion unAvion = new Avion(1, "", "A81SA", asientosAvion);
+		Assertions.assertThrows(AvionModeloIncompletoException.class, ()->{
+			Avion unAvion = new Avion(1, "", "A81SA", 12);
 		});
 	}
 	
 	@Test
 	public void instanciarAvion_FaltaMatricula_MatriculaAvionIncompletoException() {
-		
-		List<Asiento> asientosAvion = new ArrayList<Asiento>();
-		asientosAvion.add(new Asiento(1, "001"));
-		asientosAvion.add(new Asiento(2, "002"));
-		asientosAvion.add(new Asiento(3, "003"));
-		
-		Assertions.assertThrows(ModeloAvionIncompletoException.class, ()->{
-			Avion unAvion = new Avion(1, "Boeing", "", asientosAvion);
+				
+		Assertions.assertThrows(AvionMatriculaIncompletaException.class, ()->{
+			Avion unAvion = new Avion(1, "Boeing", "", 12);
 		});
 	}
 	
 	@Test
 	public void instanciarAvion_FaltaAsientos_AsientosAvionIncompletoException() {
-		Assertions.assertThrows(ModeloAvionIncompletoException.class, ()->{
-			Avion unAvion = new Avion(1, "Boeing", "A990999", null);
+		Assertions.assertThrows(AvionCantidadAsientoCeroIncompletoException.class, ()->{
+			Avion unAvion = new Avion(1, "Boeing", "A990999", 0);
 		});
 	}
 	
 	@Test
-	public void ModificarNumeroAsiento_TodosLosAtributos_InstanciaCorrecta() {
-		List<Asiento> asientosAvion = new ArrayList<Asiento>();
-		asientosAvion.add(new Asiento(1, "001"));
-		asientosAvion.add(new Asiento(2, "002"));
-		asientosAvion.add(new Asiento(3, "003"));
+	public void ModificarModeloAvion_TodosLosAtributos_InstanciaCorrecta() {
 		
-		Avion unAvion = new Avion(1, "Boeing", "A81SA", asientosAvion);
-			
-		assertEquals(1, unAvion.getId());
-		assertEquals("Boeing", unAvion.getModelo());
-		assertEquals("A81SA", unAvion.getMatricula());
-		assertEquals("eze1234", unAeropuerto.getCodigo());	
+		Avion unAvion = null;
+		try {
+			unAvion = new Avion(1, "Boeing", "A81SA", 12);
+		} catch (AvionMalFormadoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		unAvion.setModelo("Ruster");
+		assertEquals("Ruster", unAvion.getModelo());
 	}
+	
+	@Test
+	public void ModificarMatriculaAvion_TodosLosAtributos_InstanciaCorrecta() {
+		
+		Avion unAvion = null;
+		try {
+			unAvion = new Avion(1, "Boeing", "A81SA", 12);
+		} catch (AvionMalFormadoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		unAvion.setMatricula("AW888");
+		assertEquals("AW888", unAvion.getMatricula());
+	}
+	
+	@Test
+	public void ModificarCantidadAsientos_TodosLosAtributos_InstanciaCorrecta() {
+		
+		Avion unAvion = null;
+		try {
+			unAvion = new Avion(1, "Boeing", "A81SA", 12);
+		} catch (AvionMalFormadoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		unAvion.setCantidadAsientos(50);
+		assertEquals(50, unAvion.getAsientos().size());
+	}
+	
 }
