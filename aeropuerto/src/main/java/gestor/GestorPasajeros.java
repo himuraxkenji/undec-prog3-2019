@@ -117,9 +117,8 @@ public class GestorPasajeros {
 		return listaDePasajerosPorNombre;
 	}
 
-
-	
-
-
+	public boolean borrarTodosLosPasajeros() {
+		return listaPasajeros.removeAll(listaPasajeros);
+	}
 	
 }

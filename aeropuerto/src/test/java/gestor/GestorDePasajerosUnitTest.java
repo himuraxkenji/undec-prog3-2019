@@ -8,7 +8,7 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 
 @TestMethodOrder(OrderAnnotation.class)
 class GestorDePasajerosUnitTest {
-
+ 
 	GestorPasajeros gestorDePasajeros = GestorPasajeros.getInstancia();
 
 	@Test
@@ -173,12 +173,11 @@ class GestorDePasajerosUnitTest {
 		assertEquals(2, gestorDePasajeros.traerPasajeroPorNombre("Adriel").size());
 	
 	}
-	
-//	@Test
-//	void traerPilotosPorApellido_TodosLosAtributos_InstanciaCorrecta() {
-//		GestorPiloto gestorDePilotos = GestorPiloto.getInstancia();		
-//		assertEquals(3, gestorDePilotos.traerPilotoPorApellido("Diaz").size());
-//	
-//	}
+	@Test
+	@Order(16)
+	void borrarTodosLosPasajeros_TodosLosAtributos_SeEliminoListaPasajeros() {
+		assertEquals(true, gestorDePasajeros.borrarTodosLosPasajeros());
+		assertEquals(0, gestorDePasajeros.traerTodosLosPasajeros().size() );
+	}
 
 }
