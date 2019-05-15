@@ -11,7 +11,7 @@ public class Ciudad {
 	private String codigoPostal = "No cargado";
 
 	public Ciudad(Integer idCiudad, String nombre, String codigoPostal) throws CiudadMalFormadaException {
-		if(nombre.length() == 0)
+		if(nombre.length() == 0)  
 			throw new NombreCiudadIncompletaException();
 		if(idCiudad == 0)
 			throw new IdCiudadIncompletaException();
