@@ -39,6 +39,7 @@ public class Piloto {
 		this.apellido = apellido;
 		this.nombres = nombres;
 		this.dni = dni;
+		this.fechaNacimiento = LocalDate.of(1,1,1);
 	}
 
 	public Integer getId() {
