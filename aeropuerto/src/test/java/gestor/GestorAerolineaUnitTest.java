@@ -1,53 +1,65 @@
 package gestor;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 
+@TestMethodOrder(OrderAnnotation.class)
 class GestorAerolineaUnitTest {
-
+	
+	GestorAerolinea gestorDeAerolineas = GestorAerolinea.getInstancia();
+	
 	@Test
+	@Order(1)
 	void crearAerolinea_TodosLosAtributos_InstanciaCorrecta() {
-		GestorAerolinea gestorDeAerolineas = GestorAerolinea.getInstancia();
-		assertEquals(true,gestorDeAerolineas.crearAerolinea(1, "Flybondy"));
-	
+		assertEquals(true,gestorDeAerolineas.crearAerolinea("Flybondy"));
 	}
 	
 	@Test
-	void modificarAerolinea_TodosLosAtributos_InstanciaCorrecta() {
-		GestorAerolinea gestorDeAerolineas = GestorAerolinea.getInstancia();
-		assertEquals(true, gestorDeAerolineas.modificarAerolinea(1, "AerolineasArgentinas"));
+	void crearAerolinea_FaltaNombreAerolinea_InstanciaIncorrecta() {
+		assertEquals(false,gestorDeAerolineas.crearAerolinea(""));
+	}
+	
+	@Test
+	@Order(2)
+	void modificarNombreAerolinea_TodosLosAtributos_ActualizarNombreAerolinea() {
+		gestorDeAerolineas.crearAerolinea("Aerolineas Argentinas");
+		gestorDeAerolineas.crearAerolinea("Al Mundo");
+		gestorDeAerolineas.crearAerolinea("Fly Emirates");
+		gestorDeAerolineas.crearAerolinea("LAN");
+		assertEquals(true, gestorDeAerolineas.modificarAerolinea(2, "Volaris"));
+		assertEquals(2, gestorDeAerolineas.traerUnaAerolinea(2).getId());
+		assertEquals("Volaris", gestorDeAerolineas.traerUnaAerolinea(2).getNombre());
 	}
 	
 	
 	@Test
-	void borrarAerolinea_TodosLosAtributos_InstanciaCorrecta() {
-		GestorAerolinea gestorDeAerolineas = GestorAerolinea.getInstancia();
-		gestorDeAerolineas.crearAerolinea(2, "Flybondy");
-		gestorDeAerolineas.crearAerolinea(3, "Al Mundo");
-		assertEquals(true,gestorDeCiudades.borrarCiudad(2));
+	@Order(3)
+	void borrarUnaAerolinea_TodosLosAtributos_AerolineaEliminada() {
+		assertEquals(true,gestorDeAerolineas.borrarAerolinea(2));
 		
 	}
 	
 	@Test
-	void traerUnaCiudad_TodosLosAtributos_InstanciaCorrecta() {
-		GestorAerolinea gestorDeAerolineas = GestorAerolinea.getInstancia();
-		assertEquals(1, gestorDeAerolineas.traerUno(1).getID());
-		assertEquals("AerolineasArgentinas", gestorDeAerolineas.traerUno(4).getNombre());
+	@Order(4)
+	void traerUnaAerolinea_TodosLosAtributos_InstanciaCorrecta() {
+		assertEquals(1, gestorDeAerolineas.traerUnaAerolinea(1).getId());
+		assertEquals("Flybondy", gestorDeAerolineas.traerUnaAerolinea(1).getNombre());
 	}
 	
 	@Test
+	@Order(5)
 	void traerTodaslasAerolineas_TodosLosAtributos_InstanciaCorrecta() {
-		GestorAerolineas gestorDeAerolineas= GestorAerolineas.getInstancia();
-		assertEquals(2, gestorDeAerolineas.traerTodos().size());
+		assertEquals(5, gestorDeAerolineas.traerTodasLasAerolineas().size());
 	}
 	
 	@Test
-	void traerAerolineaPorNombre_TodosLosAtributos_InstanciaCorrecta() {
-		
-		GestorAerolineas gestorDeAerolineas= GestorAerolineas.getInstancia();
-		assertEquals(1, gestorDeAerolineas.traerAerolineaPorNombre("Flybondi").size);
-	
+	@Order(6)
+	void borrarTodasLasAerolineas_TodosLosAtributos_Aerolineasborradas() {
+		assertEquals(true,gestorDeAerolineas.borrarTodasLasAerolineas());
+		assertEquals(0, gestorDeAerolineas.traerTodasLasAerolineas().size());
 	}
 
 }
