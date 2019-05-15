@@ -62,10 +62,6 @@ public class GestorCiudad {
 		return false;
 	}
 
-	public Integer getUltimoCodigoCiudad() {
-		return listaDeCiudades.get(codigoCiudad - 1).getIdCiudad();
-	}
-
 	public Boolean borrarCiudad(Integer codigoCiudad) {
 		return listaDeCiudades.remove(listaDeCiudades.get(codigoCiudad-1));
 	}
@@ -87,6 +83,10 @@ public class GestorCiudad {
 		}
 		
 		return ciudadesSolicitadas;
+	}
+
+	public boolean borrarTodasLasCiudades() {
+		return listaDeCiudades.removeAll(listaDeCiudades);
 	}
 
 }

@@ -1,10 +1,10 @@
 package gestor;
 
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Order; 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 
 @TestMethodOrder(OrderAnnotation.class)
 class GestorCiudadUnitTest {
@@ -37,7 +37,7 @@ class GestorCiudadUnitTest {
 	void modificarNombreCiudad_TodosLosAtributos_InstanciaCorrecta() {
 		gestorDeCiudades.crearCiudad("Mar del plata");
 		gestorDeCiudades.crearCiudad("La plata");
-		Integer codigoCiudad = gestorDeCiudades.getUltimoCodigoCiudad();
+		Integer codigoCiudad = gestorDeCiudades.traerTodasLasCiudades().size()-1;
 		assertEquals(true, gestorDeCiudades.modificarNombreCiudad(codigoCiudad, "La Pampa"));
 		assertEquals("La Pampa", gestorDeCiudades.traerUnaCiudad(codigoCiudad).getNombre());
 	}
@@ -74,8 +74,14 @@ class GestorCiudadUnitTest {
 	@Test
 	@Order(8)
 	void traerCiudadPorNombre_TodosLosAtributos_InstanciaCorrecta() {
-		assertEquals(3, gestorDeCiudades.traerCiudadPorNombre("Mar del plata").size());
+		assertEquals(2, gestorDeCiudades.traerCiudadPorNombre("Mar del plata").size());
 		assertEquals(2, gestorDeCiudades.traerCiudadPorNombre("La Rioja").size());
 	}
 	
+	@Test
+	@Order(9)
+	void borrarTodasLasCiudades_TodosLosAtributos_InstanciaCorrecta() {
+		assertEquals(true, gestorDeCiudades.borrarTodasLasCiudades());
+		assertEquals(0, gestorDeCiudades.traerTodasLasCiudades().size());
+	}
 }
