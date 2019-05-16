@@ -35,4 +35,12 @@ public class Asignacion {
 		this.unPasajero = unPasajero;
 	}
 
+	public void setAsiento(Asiento asiento) {
+		this.unAsiento=asiento;
+	}
+
+	public void setCodigoAsignacion(String codigoAsiento) {
+		this.codigoAsignacion = codigoAsiento;
+	}
+
 }
