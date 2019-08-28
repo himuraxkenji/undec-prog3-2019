@@ -61,4 +61,9 @@ public class Cliente {
     public List<Vehiculo> devolverVehiculos() {
         return vehiculos;
     }
+
+    @Override
+    public String toString() {
+        return this.lastName + ", " + this.firstName+ " - " + this.numOfDoc;
+    }
 }
