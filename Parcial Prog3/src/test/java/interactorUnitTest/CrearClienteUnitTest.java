@@ -4,8 +4,8 @@ import Mockito.MockitoExtension;
 import excepciones.ClienteExisteException;
 import excepciones.ClienteIncompletoException;
 import interactor.CrearClienteUseCase;
-import modelo.Cliente;
 import repositorio.IRepositorioCrearCliente;
+import modelo.Cliente;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ import static org.mockito.Mockito.when;
 import java.time.LocalDate;
 
 @ExtendWith(MockitoExtension.class)
-public class crearClienteUnitTest {
+public class CrearClienteUnitTest {
 
     @Mock
     IRepositorioCrearCliente crearClienteGateway;
