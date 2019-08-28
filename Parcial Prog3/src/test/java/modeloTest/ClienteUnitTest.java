@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import Exceptions.ClienteIncompletoException;
+import excepciones.ClienteMenorEdadException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -31,7 +32,7 @@ class ClienteUnitTest {
 
 	@Test
 	void instanciarCliente_ClienteMenorEdad_ClienteMenorEdadException(){
-		Assertions.assertThrows(ClienteMenorEdadException.class, ()-> Cliente.factoryCliente(1,"Perez", "Juan","123456789",LocalDate.of(2012, 1, 1) , "Av. San Martin 123", "15152020"));
+		Assertions.assertThrows(ClienteIncompletoException.class, ()-> Cliente.factoryCliente(1,"Perez", "Juan","123456789",LocalDate.of(2012, 1, 1) , "Av. San Martin 123", "15152020"));
 	}
 
 	@Test
