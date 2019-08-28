@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDate;
 import java.util.List;
 
+import Exceptions.ClienteIncompletoException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +13,7 @@ import excepciones.ClienteIncompletoException;
 import excepciones.VehiculoIncompletoException;
 import modelo.Cliente;
 import modelo.Vehiculo;
+
 
 class ClienteUnitTest {
 
@@ -26,7 +28,12 @@ class ClienteUnitTest {
 	void instanciarCliente_ClienteSinDocumento_ClienteIncompletoException() {
 		Assertions.assertThrows(ClienteIncompletoException.class, ()-> Cliente.factoryCliente(1,"Perez", "Juan",null,LocalDate.of(1990, 1, 1) , "Av. San Martin 123", "15152020"));	
 	}
-	
+
+	@Test
+	void instanciarCliente_ClienteMenorEdad_ClienteMenorEdadException(){
+		Assertions.assertThrows(ClienteMenorEdadException.class, ()-> Cliente.factoryCliente(1,"Perez", "Juan","123456789",LocalDate.of(2012, 1, 1) , "Av. San Martin 123", "15152020"));
+	}
+
 	@Test
 	void asignarVehiculo_vehiculoCompleto_asignacionExitosa() throws ClienteIncompletoException, VehiculoIncompletoException {
 		Vehiculo elVehiculo = Vehiculo.factoryVehiculo(1, "VW Golf", "ABC123", 2009);
