@@ -5,8 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDate;
 import java.util.List;
 
-import Exceptions.ClienteIncompletoException;
-import excepciones.ClienteMenorEdadException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

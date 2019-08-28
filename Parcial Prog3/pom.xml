@@ -4,7 +4,7 @@
   <artifactId>taller</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>taller</name>
-  
+
   <build>
 		<plugins>
 			<plugin>

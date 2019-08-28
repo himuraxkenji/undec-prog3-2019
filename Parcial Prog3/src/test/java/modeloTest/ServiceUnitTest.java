@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
 
+import excepciones.ServiceIncompletoException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import excepciones.ClienteIncompletoException;
-import excepciones.ServiceIncompletoException;
 import excepciones.VehiculoIncompletoException;
 import modelo.Cliente;
 import modelo.Service;
