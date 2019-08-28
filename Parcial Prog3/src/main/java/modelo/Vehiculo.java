@@ -22,6 +22,14 @@ public class Vehiculo {
         return new Vehiculo(idVehiculo, marca, patente, year);
     }
 
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

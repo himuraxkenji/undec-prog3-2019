@@ -66,4 +66,12 @@ public class Cliente {
     public String toString() {
         return this.lastName + ", " + this.firstName+ " - " + this.numOfDoc;
     }
+
+    public String getNumOfDoc() {
+        return numOfDoc;
+    }
+
+    public void setNumOfDoc(String numOfDoc) {
+        this.numOfDoc = numOfDoc;
+    }
 }
