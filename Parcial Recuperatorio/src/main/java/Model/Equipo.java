@@ -39,7 +39,7 @@ public class Equipo {
         return nombre.equals(equipo.nombre);
     }
 
-    public boolean addJugador(Jugador elJugador) {
+    public boolean asignarJugador(Jugador elJugador) {
         if(!jugadores.contains(elJugador))
             return jugadores.add(elJugador);
         return false;
@@ -47,5 +47,15 @@ public class Equipo {
 
     public String getNombre() {
         return this.nombre;
+    }
+
+    public float obtenerPromedioEdad() {
+        float promedioEdad = jugadores.stream().mapToInt(Jugador::getEdad).sum();
+        return promedioEdad/jugadores.size();
+    }
+
+    public double obtenerPromedioEstatura() {
+        double promedioEstatura = jugadores.stream().mapToDouble(Jugador::getEstatura).sum();
+        return promedioEstatura/jugadores.size();
     }
 }

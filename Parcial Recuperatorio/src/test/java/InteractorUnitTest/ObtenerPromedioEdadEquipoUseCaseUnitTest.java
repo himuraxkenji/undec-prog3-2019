@@ -1,23 +1,26 @@
 package InteractorUnitTest;
 
-/*import Interactor.ObtenerPromedioEdadEquipoUseCase;*/
+import Exceptions.EquipoIncompletoException;
+import Exceptions.JugadorIncompletoException;
+import Interactor.ObtenerPromedioEdadEquipoUseCase;
 import Mockito.MockitoExtension;
-/*import Model.Equipo;
+import Model.Equipo;
 import Model.Jugador;
+import Repositorio.IRepositorioObtenerEquipo;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;*/
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-/*import org.mockito.Mock;
+import org.mockito.Mock;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)*/
+@ExtendWith(MockitoExtension.class)
 public class ObtenerPromedioEdadEquipoUseCaseUnitTest {
 
-   /* @Mock
+   @Mock
     private IRepositorioObtenerEquipo iRepositorioObtenerEquipo;
 
     @Test
@@ -32,7 +35,7 @@ public class ObtenerPromedioEdadEquipoUseCaseUnitTest {
 
     }
 
-    private Equipo factoryEquipo() throws EquipoIncompletoException, JugadorIncompletoException {
+   private Equipo factoryEquipo() throws EquipoIncompletoException, JugadorIncompletoException {
         Equipo elEquipo = Equipo.instancia(1, "Barcelona", new ArrayList<>());
         Jugador messi = Jugador.instancia(1, "Lionel Messi", LocalDate.of(1987, 6, 24), 1.7, "12345678");
         Jugador suarez = Jugador.instancia(2, "Luis Suarez", LocalDate.of(1987, 1, 24), 1.82, "87654321");
@@ -41,5 +44,5 @@ public class ObtenerPromedioEdadEquipoUseCaseUnitTest {
         elEquipo.asignarJugador(suarez);
         elEquipo.asignarJugador(neymar);
         return elEquipo;
-    }*/
+    }
 }

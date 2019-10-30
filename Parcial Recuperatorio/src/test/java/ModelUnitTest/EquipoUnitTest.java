@@ -39,7 +39,7 @@ public class EquipoUnitTest {
         Equipo equipoUno= Equipo.instancia(1,"Barcelona", new ArrayList<Jugador>());
         Jugador elJugador = Jugador.instancia(1, "Lionel Messi", LocalDate.of(1987, 6, 24), 1.7, "12345678");
 
-        Assertions.assertTrue(equipoUno.addJugador(elJugador));
+        Assertions.assertTrue(equipoUno.asignarJugador(elJugador));
 
     }
 
@@ -47,8 +47,8 @@ public class EquipoUnitTest {
     public void factoryEquipo_agregarJugadorEquipo_JugadorNoAgregado() throws EquipoIncompletoException, JugadorIncompletoException {
         Equipo equipoUno= Equipo.instancia(1,"Barcelona", new ArrayList<Jugador>());
         Jugador elJugador = Jugador.instancia(1, "Lionel Messi", LocalDate.of(1987, 6, 24), 1.7, "12345678");
-        equipoUno.addJugador(elJugador);
-        Assertions.assertFalse(equipoUno.addJugador(elJugador));
+        equipoUno.asignarJugador(elJugador);
+        Assertions.assertFalse(equipoUno.asignarJugador(elJugador));
 
     }
 

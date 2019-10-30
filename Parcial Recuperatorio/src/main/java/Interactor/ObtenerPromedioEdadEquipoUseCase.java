@@ -1,9 +1,11 @@
 package Interactor;
 
 import Model.Equipo;
+import Repositorio.IRepositorioObtenerEquipo;
 
 public class ObtenerPromedioEdadEquipoUseCase {
-   /* private IRepositorioObtenerEquipo iRepositorioObtenerEquipo;
+
+   private IRepositorioObtenerEquipo iRepositorioObtenerEquipo;
 
     public ObtenerPromedioEdadEquipoUseCase(IRepositorioObtenerEquipo iRepositorioObtenerEquipo) {
 
@@ -14,6 +16,6 @@ public class ObtenerPromedioEdadEquipoUseCase {
         return Math.round(this.iRepositorioObtenerEquipo.obtenerEquipoPorNombre(elEquipo.getNombre()).obtenerPromedioEdad()*100.0)/100.0;
 
     }
-*/
+
 
 }

@@ -3,6 +3,7 @@ package Model;
 import Exceptions.JugadorIncompletoException;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Jugador {
 
@@ -54,5 +55,13 @@ public class Jugador {
 
     public void setDocumento(String documento) {
         this.documento = documento;
+    }
+
+    public Integer getEdad() {
+        return Period.between(fechaNacimiento, LocalDate.now()).getYears();
+    }
+
+    public double getEstatura() {
+        return this.estatura;
     }
 }
