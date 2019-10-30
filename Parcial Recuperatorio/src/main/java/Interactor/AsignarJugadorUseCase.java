@@ -4,7 +4,7 @@ import Model.Equipo;
 import Model.Jugador;
 
 public class AsignarJugadorUseCase {
-    private IRepositorioAsignarJugador iRepositorioAsignarJugador;
+   /* private IRepositorioAsignarJugador iRepositorioAsignarJugador;
 
     public AsignarJugadorUseCase(IRepositorioAsignarJugador iRepositorioAsignarJugador) {
 
@@ -18,5 +18,5 @@ public class AsignarJugadorUseCase {
         }
         throw new JugadorAsignadoException();
 
-    }
+    }*/
 }

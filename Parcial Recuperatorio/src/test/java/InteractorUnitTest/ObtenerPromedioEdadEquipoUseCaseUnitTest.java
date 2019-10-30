@@ -1,23 +1,23 @@
 package InteractorUnitTest;
 
-import Interactor.ObtenerPromedioEdadEquipoUseCase;
+/*import Interactor.ObtenerPromedioEdadEquipoUseCase;*/
 import Mockito.MockitoExtension;
-import Model.Equipo;
+/*import Model.Equipo;
 import Model.Jugador;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test;*/
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
+/*import org.mockito.Mock;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
+@ExtendWith(MockitoExtension.class)*/
 public class ObtenerPromedioEdadEquipoUseCaseUnitTest {
 
-    @Mock
+   /* @Mock
     private IRepositorioObtenerEquipo iRepositorioObtenerEquipo;
 
     @Test
@@ -41,5 +41,5 @@ public class ObtenerPromedioEdadEquipoUseCaseUnitTest {
         elEquipo.asignarJugador(suarez);
         elEquipo.asignarJugador(neymar);
         return elEquipo;
-    }
+    }*/
 }
